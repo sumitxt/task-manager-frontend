@@ -6,33 +6,32 @@ import {TaskListByStatus} from "../../APIRequest/APIRequest";
 import {useSelector} from "react-redux";
 import {DeleteToDO} from "../../helper/DeleteAlert";
 import {UpdateToDO} from "../../helper/UpdateAlert";
+
 const New = () => {
 
-    useEffect(()=>{
+    useEffect(() => {
         TaskListByStatus("New");
-    },[])
+    }, [])
 
 
     const NewList = useSelector((state) => state.task.New)
 
 
-
-    const DeleteItem=(id)=>{
-        DeleteToDO(id).then((result)=>{
-            if(result===true){
+    const DeleteItem = (id) => {
+        DeleteToDO(id).then((result) => {
+            if (result === true) {
                 TaskListByStatus("New");
             }
         })
     }
 
-    const StatusChangeItem=(id,status)=>{
-        UpdateToDO(id, status).then((result)=>{
-            if(result===true){
+    const StatusChangeItem = (id, status) => {
+        UpdateToDO(id, status).then((result) => {
+            if (result === true) {
                 TaskListByStatus("New");
             }
         })
     }
-
 
 
     return (
@@ -55,7 +54,7 @@ const New = () => {
                 </div>
                 <div className="row p-0 m-0">
                     {
-                        NewList.map((item,i)=>
+                        NewList.map((item, i) =>
                             <div key={i.toString()} className="col-12 col-lg-4 col-sm-6 col-md-4  p-2">
                                 <div className="card h-100">
                                     <div className="card-body">
@@ -63,8 +62,10 @@ const New = () => {
                                         <p className="animated fadeInUp">{item.description}</p>
                                         <p className="m-0 animated fadeInUp p-0">
                                             <AiOutlineCalendar/> {item.createdDate}
-                                            <a onClick={StatusChangeItem.bind(this,item._id,item.status)} className="icon-nav text-primary mx-1"><AiOutlineEdit /></a>
-                                            <a onClick={DeleteItem.bind(this,item._id)} className="icon-nav text-danger mx-1"><AiOutlineDelete /></a>
+                                            <a onClick={StatusChangeItem.bind(this, item._id, item.status)}
+                                               className="icon-nav text-primary mx-1"><AiOutlineEdit/></a>
+                                            <a onClick={DeleteItem.bind(this, item._id)}
+                                               className="icon-nav text-danger mx-1"><AiOutlineDelete/></a>
                                             <a className="badge float-end bg-info">{item.status}</a>
                                         </p>
                                     </div>

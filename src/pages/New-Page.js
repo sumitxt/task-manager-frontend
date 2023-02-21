@@ -1,7 +1,8 @@
 import React, {Fragment, lazy, Suspense} from 'react';
 import MasterLayout from "../components/masterLayout/Master-Layout";
 import LazyLoader from "../components/masterLayout/LazyLoader";
-const New =lazy(() => import('../components/New/New'));
+
+const New = lazy(() => import('../components/New/New'));
 const NewPage = () => {
     return (
         <Fragment>

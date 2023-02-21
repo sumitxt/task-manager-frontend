@@ -7,9 +7,9 @@ import {useNavigate} from "react-router-dom";
 
 
 const VerifyOTP = () => {
-    let navigate=useNavigate();
+    let navigate = useNavigate();
 
-    let  defaultInputStyle= {
+    let defaultInputStyle = {
         fontFamily: "monospace",
         MozAppearance: "textfield",
         margin: "4px",
@@ -26,20 +26,17 @@ const VerifyOTP = () => {
     }
 
 
-    let [OTP,SetOTP]=useState("")
-
-
+    let [OTP, SetOTP] = useState("")
 
 
     const SubmitOTP = () => {
-        if(OTP.length===6){
-            RecoverVerifyOTPRequest(getEmail(),OTP).then((result)=>{
-                if(result===true){
+        if (OTP.length === 6) {
+            RecoverVerifyOTPRequest(getEmail(), OTP).then((result) => {
+                if (result === true) {
                     navigate("/CreatePassword")
                 }
             })
-        }
-        else {
+        } else {
             ErrorToast("Enter 6 Digit Code")
         }
     }
@@ -54,9 +51,12 @@ const VerifyOTP = () => {
                             <div className="card-body">
                                 <h4>OTP VERIFICATION </h4>
                                 <p>A 6 Digit verification code has been sent to your email address. </p>
-                                <ReactCodeInput onChange={(value)=>SetOTP(value)} inputStyle={defaultInputStyle}  fields={6}/>
-                                <br/>  <br/>
-                                <button onClick={SubmitOTP} className="btn w-100 animated fadeInUp float-end btn-primary">Next</button>
+                                <ReactCodeInput onChange={(value) => SetOTP(value)} inputStyle={defaultInputStyle}
+                                                fields={6}/>
+                                <br/> <br/>
+                                <button onClick={SubmitOTP}
+                                        className="btn w-100 animated fadeInUp float-end btn-primary">Next
+                                </button>
                             </div>
                         </div>
                     </div>

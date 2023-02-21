@@ -1,6 +1,7 @@
 import React, {Fragment, lazy, Suspense} from 'react';
 import LazyLoader from "../components/masterLayout/LazyLoader";
-const Login =lazy(() => import('../components/Login/Login'));
+
+const Login = lazy(() => import('../components/Login/Login'));
 const LoginPage = () => {
     return (
         <Fragment>

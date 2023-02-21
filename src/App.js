@@ -18,18 +18,18 @@ import CreatePasswordPage from "./pages/AccountRecover/Create-Password-Page";
 
 const App = () => {
 
-    if(getToken()){
+    if (getToken()) {
         return (
             <Fragment>
                 <BrowserRouter>
                     <Routes>
-                        <Route exact path="/" element={<DashboardPage  />}  />}/>
-                        <Route exact path="/Create" element={<CreatePage />}  />}/>
-                        <Route exact path="/All" element={<NewPage />}/>}/>
-                        <Route exact path="/Progress"  element={<ProgressPage />}/>} />}/>
-                        <Route exact path="/Completed"  element={<CompletedPage />}/>}  />}/>
-                        <Route exact path="/Canceled" element={<CanceledPage />}/>} />}/>
-                        <Route exact path="/Profile" element={<ProfilePage />}/>}  />}/>
+                        <Route exact path="/" element={<DashboardPage/>}/>}/>
+                        <Route exact path="/Create" element={<CreatePage/>}/>}/>
+                        <Route exact path="/All" element={<NewPage/>}/>}/>
+                        <Route exact path="/Progress" element={<ProgressPage/>}/>} />}/>
+                        <Route exact path="/Completed" element={<CompletedPage/>}/>} />}/>
+                        <Route exact path="/Canceled" element={<CanceledPage/>}/>} />}/>
+                        <Route exact path="/Profile" element={<ProfilePage/>}/>} />}/>
                         <Route path="*" element={<Page404/>}/>
                     </Routes>
                 </BrowserRouter>
@@ -37,15 +37,14 @@ const App = () => {
             </Fragment>
         );
 
-    }
-    else {
+    } else {
         return (
             <Fragment>
                 <BrowserRouter>
                     <Routes>
-                        <Route path="/" element={<Navigate to="/Login" replace />}/>
-                        <Route exact path="/Login" element={<LoginPage />}/>}  />}/>
-                        <Route exact path="/Registration" element={<RegistrationPage />}/>} />}/>
+                        <Route path="/" element={<Navigate to="/Login" replace/>}/>
+                        <Route exact path="/Login" element={<LoginPage/>}/>} />}/>
+                        <Route exact path="/Registration" element={<RegistrationPage/>}/>} />}/>
 
                         <Route exact path="/SendOTP" element={<SendOTPPage/>}/>} />}/>
                         <Route exact path="/VerifyOTP" element={<VerifyOTPPage/>}/>} />}/>

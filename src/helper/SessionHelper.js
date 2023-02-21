@@ -1,41 +1,54 @@
-class SessionHelper{
-    setToken(token){
-        localStorage.setItem("token",token)
+class SessionHelper {
+    setToken(token) {
+        localStorage.setItem("token", token)
     }
-    getToken(){
+
+    getToken() {
         return localStorage.getItem("token")
     }
 
 
-
-    setUserDetails(UserDetails){
-        localStorage.setItem("UserDetails",JSON.stringify(UserDetails))
+    setUserDetails(UserDetails) {
+        localStorage.setItem("UserDetails", JSON.stringify(UserDetails))
     }
-    getUserDetails(){
+
+    getUserDetails() {
         return JSON.parse(localStorage.getItem("UserDetails"))
     }
 
 
-    setEmail(Email){
-        localStorage.setItem("Email",Email)
+    setEmail(Email) {
+        localStorage.setItem("Email", Email)
     }
-    getEmail(){
+
+    getEmail() {
         return localStorage.getItem("Email")
     }
 
-    setOTP(OTP){
-        localStorage.setItem("OTP",OTP)
+    setOTP(OTP) {
+        localStorage.setItem("OTP", OTP)
     }
-    getOTP(){
+
+    getOTP() {
         return localStorage.getItem("OTP")
     }
 
 
-
-    removeSessions=()=>{
+    removeSessions = () => {
         localStorage.clear();
-        window.location.href="/login"
+        window.location.href = "/login"
     }
 
 }
-export const {setEmail,getEmail,setOTP,getOTP,setToken,getToken,setUserDetails,getUserDetails,removeSessions}=new SessionHelper();
+
+export const {
+    setEmail,
+    getEmail,
+    setOTP,
+    getOTP,
+    setToken,
+    getToken,
+    setUserDetails,
+    getUserDetails,
+    removeSessions
+} = new SessionHelper();

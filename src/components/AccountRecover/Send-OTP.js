@@ -4,16 +4,15 @@ import {RecoverVerifyEmailRequest} from "../../APIRequest/APIRequest";
 import {useNavigate} from "react-router-dom";
 
 const SendOTP = () => {
-    let emailRef=useRef();
-    let navigate=useNavigate();
-    const VerifyEmail=()=>{
-        let email=emailRef.value;
-        if(IsEmail(email)){
+    let emailRef = useRef();
+    let navigate = useNavigate();
+    const VerifyEmail = () => {
+        let email = emailRef.value;
+        if (IsEmail(email)) {
             ErrorToast("Valid Email Address Required !")
-        }
-        else{
-            RecoverVerifyEmailRequest(email).then((result)=>{
-                if(result===true){
+        } else {
+            RecoverVerifyEmailRequest(email).then((result) => {
+                if (result === true) {
                     navigate("/VerifyOTP")
                 }
             })
@@ -29,9 +28,12 @@ const SendOTP = () => {
                                 <h4>EMAIL ADDRESS</h4>
                                 <br/>
                                 <label>Your email address</label>
-                                <input ref={(input)=>emailRef=input}  placeholder="User Email" className="form-control animated fadeInUp" type="email"/>
+                                <input ref={(input) => emailRef = input} placeholder="User Email"
+                                       className="form-control animated fadeInUp" type="email"/>
                                 <br/>
-                                <button onClick={VerifyEmail}  className="btn w-100 animated fadeInUp float-end btn-primary">Next</button>
+                                <button onClick={VerifyEmail}
+                                        className="btn w-100 animated fadeInUp float-end btn-primary">Next
+                                </button>
                             </div>
                         </div>
                     </div>
