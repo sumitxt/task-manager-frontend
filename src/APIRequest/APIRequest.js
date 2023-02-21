@@ -7,7 +7,7 @@ import {SetCanceledTask, SetCompletedTask, SetNewTask, SetProgressTask} from "..
 import {SetSummary} from "../redux/state-slice/summary-slice";
 import {SetProfile} from "../redux/state-slice/profile-slice";
 
-const BaseURL = "https://taskmanager-jh7z.onrender.com/api/v1"
+const BaseURL = "https://taskmanager-jh7z.onrender.com/api/v1/"
 
 const AxiosHeader = {headers: {"token": getToken()}}
 
