@@ -6,39 +6,42 @@ import {TaskListByStatus} from "../../APIRequest/APIRequest";
 import {useSelector} from "react-redux";
 import {DeleteToDO} from "../../helper/DeleteAlert";
 import {UpdateToDO} from "../../helper/UpdateAlert";
-const Completed = () => {
+const Canceled = () => {
 
     useEffect(()=>{
-        TaskListByStatus("Completed");
+        TaskListByStatus("Canceled");
     },[])
 
-    const CompletedList = useSelector((state) => state.task.Completed)
 
-
+    const CanceledList = useSelector((state) => state.task.Canceled)
 
 
     const DeleteItem=(id)=>{
         DeleteToDO(id).then((result)=>{
             if(result===true){
-                TaskListByStatus("Completed");
+                TaskListByStatus("Canceled");
             }
         })
     }
 
+
     const StatusChangeItem=(id,status)=>{
         UpdateToDO(id, status).then((result)=>{
             if(result===true){
-                TaskListByStatus("Completed");
+                TaskListByStatus("Canceled");
             }
         })
     }
+
+
+
 
     return (
         <Fragment>
             <Container fluid={true} className="content-body">
                 <div className="row p-0 m-0">
                     <div className="col-12 col-md-6 col-lg-8 px-3">
-                        <h5>Task Completed</h5>
+                        <h5>Task Canceled</h5>
                     </div>
                     <div className="col-12 float-end col-md-6 col-lg-4 px-2">
                         <div className="row">
@@ -53,7 +56,7 @@ const Completed = () => {
                 </div>
                 <div className="row p-0 m-0">
                     {
-                        CompletedList.map((item,i)=>
+                        CanceledList.map((item,i)=>
                             <div key={i.toString()} className="col-12 col-lg-4 col-sm-6 col-md-4  p-2">
                                 <div className="card h-100">
                                     <div className="card-body">
@@ -63,7 +66,7 @@ const Completed = () => {
                                             <AiOutlineCalendar/> {item.createdDate}
                                             <a onClick={StatusChangeItem.bind(this,item._id,item.status)}  className="icon-nav text-primary mx-1"><AiOutlineEdit /></a>
                                             <a onClick={DeleteItem.bind(this,item._id)} className="icon-nav text-danger mx-1"><AiOutlineDelete /></a>
-                                            <a className="badge float-end bg-success">{item.status}</a>
+                                            <a className="badge float-end bg-danger">{item.status}</a>
                                         </p>
                                     </div>
                                 </div>
@@ -75,4 +78,4 @@ const Completed = () => {
     );
 };
 
-export default Completed;
+export default Canceled;
