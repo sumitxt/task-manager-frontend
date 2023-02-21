@@ -11,7 +11,7 @@ const Progress = () => {
 
 
     useEffect(() => {
-        TaskListByStatus("Progress")
+        TaskListByStatus("In Progress")
     }, [])
 
     const ProgressList = useSelector((state) => state.task.Progress)
@@ -20,7 +20,7 @@ const Progress = () => {
     const DeleteItem = (id) => {
         DeleteToDO(id).then((result) => {
             if (result === true) {
-                TaskListByStatus("Progress");
+                TaskListByStatus("In Progress");
             }
         })
     }
@@ -28,7 +28,7 @@ const Progress = () => {
     const StatusChangeItem = (id, status) => {
         UpdateToDO(id, status).then((result) => {
             if (result === true) {
-                TaskListByStatus("Progress");
+                TaskListByStatus("In Progress");
             }
         })
     }
