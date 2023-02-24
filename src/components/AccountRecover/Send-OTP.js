@@ -29,10 +29,10 @@ const SendOTP = () => {
                                 <br/>
                                 <label>Your email address</label>
                                 <input ref={(input) => emailRef = input} placeholder="User Email"
-                                       className="form-control animated fadeInUp" type="email"/>
+                                       className="form-control animated zoomInDown" type="email"/>
                                 <br/>
                                 <button onClick={VerifyEmail}
-                                        className="btn w-100 animated fadeInUp float-end button-63">Send OTP
+                                        className="btn w-100 animated zoomInDown float-end button-63">Send OTP
                                 </button>
                             </div>
                         </div>

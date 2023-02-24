@@ -68,42 +68,42 @@ const Profile = () => {
                                     <div className="col-4 p-2">
                                         <label>Profile Picture</label>
                                         <input onChange={PreviewImage} ref={(input) => userImgRef = input}
-                                               placeholder="User Email" className="form-control animated fadeInUp"
+                                               placeholder="User Email" className="form-control animated zoomInDown"
                                                type="file"/>
                                     </div>
                                     <div className="col-4 p-2">
                                         <label>Email Address</label>
                                         <input key={Date.now()} defaultValue={ProfileData['email']} readOnly={true}
                                                ref={(input) => emailRef = input} placeholder="User Email"
-                                               className="form-control animated fadeInUp" type="email"/>
+                                               className="form-control animated zoomInDown" type="email"/>
                                     </div>
                                     <div className="col-4 p-2">
                                         <label>First Name</label>
                                         <input key={Date.now()} defaultValue={ProfileData['firstName']}
                                                ref={(input) => firstNameRef = input} placeholder="First Name"
-                                               className="form-control animated fadeInUp" type="text"/>
+                                               className="form-control animated zoomInDown" type="text"/>
                                     </div>
                                     <div className="col-4 p-2">
                                         <label>Last Name</label>
                                         <input key={Date.now()} defaultValue={ProfileData['lastName']}
                                                ref={(input) => lastNameRef = input} placeholder="Last Name"
-                                               className="form-control animated fadeInUp" type="text"/>
+                                               className="form-control animated zoomInDown" type="text"/>
                                     </div>
                                     <div className="col-4 p-2">
                                         <label>Mobile</label>
                                         <input key={Date.now()} defaultValue={ProfileData['mobile']}
                                                ref={(input) => mobileRef = input} placeholder="Mobile"
-                                               className="form-control animated fadeInUp" type="mobile"/>
+                                               className="form-control animated zoomInDown" type="mobile"/>
                                     </div>
                                     <div className="col-4 p-2">
                                         <label>Password</label>
                                         <input key={Date.now()} defaultValue={ProfileData['password']}
                                                ref={(input) => passwordRef = input} placeholder="User Password"
-                                               className="form-control animated fadeInUp" type="password"/>
+                                               className="form-control animated zoomInDown" type="password"/>
                                     </div>
                                     <div className="col-4 p-2">
                                         <button onClick={UpdateMyProfile}
-                                                className="btn w-100 float-end button-63 animated fadeInUp">Update
+                                                className="btn w-100 float-end button-63 animated zoomInDown">Update
                                         </button>
                                     </div>
                                 </div>

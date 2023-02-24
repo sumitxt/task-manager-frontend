@@ -57,9 +57,9 @@ const Progress = () => {
                             <div key={i.toString()} className="col-12 col-lg-4 col-sm-6 col-md-4  p-2">
                                 <div className="card h-100">
                                     <div className="card-body">
-                                        <h6 className="animated fadeInUp">{item.title}</h6>
-                                        <p className="animated fadeInUp">{item.description}</p>
-                                        <p className="m-0 animated fadeInUp p-0">
+                                        <h6 className="animated zoomInDown">{item.title}</h6>
+                                        <p className="animated zoomInDown">{item.description}</p>
+                                        <p className="m-0 animated zoomInDown p-0">
                                             <AiOutlineCalendar/> {item.createdDate}
                                             <a onClick={StatusChangeItem.bind(this, item._id, item.status)}
                                                className="icon-nav text-primary mx-1"><AiOutlineEdit/></a>

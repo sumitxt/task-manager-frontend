@@ -33,10 +33,10 @@ const Create = () => {
                             <h4>Create New</h4>
                             <br/>
                             <input ref={(input) => titleRef = input} placeholder="Task Name"
-                                   className="form-control animated fadeInUp" type="text"/>
+                                   className="form-control animated zoomInDown" type="text"/>
                             <br/>
                             <textarea ref={(input) => descriptionRef = input} rows={5} placeholder="Task Description"
-                                      className="form-control animated fadeInUp" type="text"/>
+                                      className="form-control animated zoomInDown" type="text"/>
                             <br/>
                             <button onClick={CreateNew} className="btn float-end button-63">Create</button>
                         </div>

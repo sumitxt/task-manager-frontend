@@ -50,34 +50,34 @@ const Registration = () => {
                                     <div className="col-md-4 p-2">
                                         <label>Email Address</label>
                                         <input ref={(input) => emailRef = input} placeholder="User Email"
-                                               className="form-control animated fadeInUp" type="email"/>
+                                               className="form-control animated zoomInDown" type="email"/>
                                     </div>
                                     <div className="col-md-4 p-2">
                                         <label>First Name</label>
                                         <input ref={(input) => firstNameRef = input} placeholder="First Name"
-                                               className="form-control animated fadeInUp" type="text"/>
+                                               className="form-control animated zoomInDown" type="text"/>
                                     </div>
                                     <div className="col-md-4 p-2">
                                         <label>Last Name</label>
                                         <input ref={(input) => lastNameRef = input} placeholder="Last Name"
-                                               className="form-control animated fadeInUp" type="text"/>
+                                               className="form-control animated zoomInDown" type="text"/>
                                     </div>
                                     <div className="col-md-4 p-2">
                                         <label>Mobile Number</label>
                                         <input ref={(input) => mobileRef = input} placeholder="Mobile"
-                                               className="form-control animated fadeInUp" type="mobile"/>
+                                               className="form-control animated zoomInDown" type="mobile"/>
                                     </div>
                                     <div className="col-md-4 p-2">
                                         <label>Password</label>
                                         <input ref={(input) => passwordRef = input} placeholder="User Password"
-                                               className="form-control animated fadeInUp" type="password"/>
+                                               className="form-control animated zoomInDown" type="password"/>
                                     </div>
 
                                 </div>
                                 <div lassName="row mt-2 p-0">
                                     <div className="col-md-4 p-2">
                                         <button onClick={onRegistration}
-                                                className="btn mt-3 w-100 float-end button-63 animated fadeInUp">Sign up
+                                                className="btn mt-3 w-100 float-end button-63 animated zoomInDown">Sign up
                                         </button>
                                     </div>
                                 </div>

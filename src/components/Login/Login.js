@@ -35,21 +35,21 @@ const Login = () => {
                                 <h4>SIGN IN</h4>
                                 <br/>
                                 <input ref={(input) => emailRef = input} placeholder="User Email"
-                                       className="form-control animated fadeInUp" type="email"/>
+                                       className="form-control animated zoomInDown" type="email"/>
                                 <br/>
                                 <input ref={(input) => passRef = input} placeholder="User Password"
-                                       className="form-control animated fadeInUp" type="password"/>
+                                       className="form-control animated zoomInDown" type="password"/>
                                 <br/>
                                 <button onClick={SubmitLogin}
-                                        className="btn w-100 animated fadeInUp float-end button-63">Login
+                                        className="btn w-100 animated zoomInDown float-end button-63">Login
                                 </button>
                                 <hr/>
                                 <div className="float-end mt-3">
 
                                     <span>
-                                        <Link className="text-center ms-3 h6 animated fadeInUp" to="/Registration">Sign Up </Link>
+                                        <Link className="text-center ms-3 h6 animated zoomInDown" to="/Registration">Sign Up </Link>
                                         <span className="ms-1">|</span>
-                                        <Link className="text-center ms-3 h6 animated fadeInUp" to="/SendOTP">Forgot Password?</Link>
+                                        <Link className="text-center ms-3 h6 animated zoomInDown" to="/SendOTP">Forgot Password?</Link>
                                     </span>
 
                                 </div>

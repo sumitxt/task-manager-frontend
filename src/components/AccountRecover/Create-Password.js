@@ -38,18 +38,18 @@ const CreatePassword = () => {
                                 <br/>
                                 <label>Your email address</label>
                                 <input readOnly={true} value={getEmail()} placeholder="User Email"
-                                       className="form-control animated fadeInUp" type="email"/>
+                                       className="form-control animated zoomInDown" type="email"/>
                                 <br/>
                                 <label>New Password</label>
                                 <input ref={(input) => PasswordRef = input} placeholder="New Password"
-                                       className="form-control animated fadeInUp" type="password"/>
+                                       className="form-control animated zoomInDown" type="password"/>
                                 <br/>
                                 <label>Confirm Password</label>
                                 <input ref={(input) => ConfirmPasswordRef = input} placeholder="Confirm Password"
-                                       className="form-control animated fadeInUp" type="password"/>
+                                       className="form-control animated zoomInDown" type="password"/>
                                 <br/>
                                 <button onClick={ResetPass}
-                                        className="btn w-100 animated fadeInUp float-end button-63">Set new password
+                                        className="btn w-100 animated zoomInDown float-end button-63">Set new password
                                 </button>
                             </div>
                         </div>
