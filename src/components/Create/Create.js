@@ -30,7 +30,7 @@ const Create = () => {
                 <div className="col-12 col-lg-8  col-sm-12 col-md-8  p-2">
                     <div className="card">
                         <div className="card-body">
-                            <h4>Create New</h4>
+                            <h4>Create New Task</h4>
                             <br/>
                             <input ref={(input) => titleRef = input} placeholder="Task Name"
                                    className="form-control animated zoomInDown" type="text"/>

@@ -107,7 +107,6 @@ export function TaskListByStatus(Status) {
             } else if (Status === "Canceled") {
                 store.dispatch(SetCanceledTask(res.data['data']))
             } else if (Status === "Progress") {
-                debugger;
                 store.dispatch(SetProgressTask(res.data['data']))
             }
         } else {

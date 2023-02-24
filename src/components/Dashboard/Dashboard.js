@@ -17,10 +17,10 @@ const Dashboard = () => {
                     {
                         SummaryList.map((item, i) =>
                             <div className="col-12 col-lg-3 col-sm-6 col-md-3  p-2">
-                                <div className="card h-100">
+                                <div className="card text-white bg-info h-100">
                                     <div className="card-body">
                                         <h5 className="animated zoomInDown">Total {item._id} tasks</h5>
-                                        <h6 className="text-secondary animated zoomInDown">{item.sum}</h6>
+                                        <h6 className="text-white animated zoomInDown">{item.sum}</h6>
                                     </div>
                                 </div>
                             </div>

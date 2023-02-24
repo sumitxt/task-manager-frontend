@@ -6,8 +6,8 @@
               fill="none"/>
         <rect id="Rectangle_1080" data-name="Rectangle 1080" width="1546" height="512" transform="translate(4784 1201)"
               fill="rgba(0,0,0,0)"/>
-        <text id="Inventory" transform="translate(5325 1602)" fill="#363b64" font-size="392"
-              font-family="RobotoCondensed-Bold, Roboto" font-weight="700">
+        <text id="Inventory" transform="translate(5208 1602)" fill="#363b64" font-size="392"
+              font-family="'Gajraj One', cursive" font-weight="400">
             <tspan x="0" y="0">Task Manager</tspan>
         </text>
         <g id="list-6246" transform="translate(5016.96 1432.957)">
