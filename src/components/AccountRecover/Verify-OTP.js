@@ -55,7 +55,7 @@ const VerifyOTP = () => {
                                                 fields={6}/>
                                 <br/> <br/>
                                 <button onClick={SubmitOTP}
-                                        className="btn w-100 animated fadeInUp float-end btn-primary">Next
+                                        className="btn w-100 animated fadeInUp float-end button-63">Verify OTP
                                 </button>
                             </div>
                         </div>

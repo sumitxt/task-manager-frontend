@@ -32,7 +32,7 @@ const SendOTP = () => {
                                        className="form-control animated fadeInUp" type="email"/>
                                 <br/>
                                 <button onClick={VerifyEmail}
-                                        className="btn w-100 animated fadeInUp float-end btn-primary">Next
+                                        className="btn w-100 animated fadeInUp float-end button-63">Send OTP
                                 </button>
                             </div>
                         </div>

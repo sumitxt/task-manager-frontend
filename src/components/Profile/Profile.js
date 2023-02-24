@@ -103,7 +103,7 @@ const Profile = () => {
                                     </div>
                                     <div className="col-4 p-2">
                                         <button onClick={UpdateMyProfile}
-                                                className="btn w-100 float-end btn-primary animated fadeInUp">Update
+                                                className="btn w-100 float-end button-63 animated fadeInUp">Update
                                         </button>
                                     </div>
                                 </div>

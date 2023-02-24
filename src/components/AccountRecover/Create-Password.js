@@ -49,7 +49,7 @@ const CreatePassword = () => {
                                        className="form-control animated fadeInUp" type="password"/>
                                 <br/>
                                 <button onClick={ResetPass}
-                                        className="btn w-100 animated fadeInUp float-end btn-primary">Next
+                                        className="btn w-100 animated fadeInUp float-end button-63">Set new password
                                 </button>
                             </div>
                         </div>

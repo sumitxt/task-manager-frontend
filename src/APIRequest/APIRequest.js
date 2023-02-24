@@ -6,19 +6,16 @@ import {getToken, setEmail, setOTP, setToken, setUserDetails} from "../helper/Se
 import {SetCanceledTask, SetCompletedTask, SetNewTask, SetProgressTask} from "../redux/state-slice/task-slice";
 import {SetSummary} from "../redux/state-slice/summary-slice";
 import {SetProfile} from "../redux/state-slice/profile-slice";
+import {UnAuthorizeRequest} from "./UnAuthorizeRequest";
 
-const BaseURL = "https://taskmanager-jh7z.onrender.com/api/v1/"
+const BaseURL = "https://taskmanager-jh7z.onrender.com/api/v1"
 
 const AxiosHeader = {headers: {"token": getToken()}}
 
 export function NewTaskRequest(title, description) {
-
-
     store.dispatch(ShowLoader())
-
     let URL = BaseURL + "/createTask";
     let PostBody = {"title": title, "description": description, status: "New"}
-
     return axios.post(URL, PostBody, AxiosHeader).then((res) => {
         store.dispatch(HideLoader())
         if (res.status === 200) {
@@ -28,14 +25,13 @@ export function NewTaskRequest(title, description) {
             ErrorToast("Something Went Wrong")
             return false;
         }
-
     }).catch((err) => {
         ErrorToast("Something Went Wrong")
         store.dispatch(HideLoader())
+        UnAuthorizeRequest(err);
         return false;
     })
 }
-
 
 export function LoginRequest(email, password) {
     store.dispatch(ShowLoader())
@@ -55,6 +51,7 @@ export function LoginRequest(email, password) {
     }).catch((err) => {
         ErrorToast("Something Went Wrong")
         store.dispatch(HideLoader())
+        UnAuthorizeRequest(err);
         return false;
     });
 }
@@ -92,6 +89,7 @@ export function RegistrationRequest(email, firstName, lastName, mobile, password
     }).catch((err) => {
         store.dispatch(HideLoader())
         ErrorToast("Something Went Wrong")
+        UnAuthorizeRequest(err);
         return false;
     })
 }
@@ -108,7 +106,8 @@ export function TaskListByStatus(Status) {
                 store.dispatch(SetCompletedTask(res.data['data']))
             } else if (Status === "Canceled") {
                 store.dispatch(SetCanceledTask(res.data['data']))
-            } else if (Status === "In Progress") {
+            } else if (Status === "Progress") {
+                debugger;
                 store.dispatch(SetProgressTask(res.data['data']))
             }
         } else {
@@ -117,6 +116,8 @@ export function TaskListByStatus(Status) {
     }).catch((err) => {
         ErrorToast("Something Went Wrong")
         store.dispatch(HideLoader())
+        UnAuthorizeRequest(err);
+        return false;
     });
 }
 
@@ -133,6 +134,8 @@ export function SummaryRequest() {
     }).catch((err) => {
         ErrorToast("Something Went Wrong")
         store.dispatch(HideLoader())
+        UnAuthorizeRequest(err);
+        return false;
     });
 }
 
@@ -151,6 +154,7 @@ export function DeleteRequest(id) {
     }).catch((err) => {
         ErrorToast("Something Went Wrong")
         store.dispatch(HideLoader())
+        UnAuthorizeRequest(err);
         return false;
     });
 }
@@ -170,6 +174,7 @@ export function UpdateStatusRequest(id, status) {
     }).catch((err) => {
         ErrorToast("Something Went Wrong")
         store.dispatch(HideLoader())
+        UnAuthorizeRequest(err);
         return false;
     });
 }
@@ -187,15 +192,13 @@ export function GetProfileDetails() {
     }).catch((err) => {
         ErrorToast("Something Went Wrong")
         store.dispatch(HideLoader())
+        UnAuthorizeRequest(err);
     });
 }
 
 export function ProfileUpdateRequest(email, firstName, lastName, mobile, password, photo) {
-
     store.dispatch(ShowLoader())
-
     let URL = BaseURL + "/profileUpdate";
-
     let PostBody = {
         email: email,
         firstName: firstName,
@@ -205,14 +208,11 @@ export function ProfileUpdateRequest(email, firstName, lastName, mobile, passwor
         photo: photo
     }
     let UserDetails = {email: email, firstName: firstName, lastName: lastName, mobile: mobile, photo: photo}
-
     return axios.post(URL, PostBody, AxiosHeader).then((res) => {
         store.dispatch(HideLoader())
         if (res.status === 200) {
-
             SuccessToast("Profile Update Success")
             setUserDetails(UserDetails)
-
             return true;
         } else {
             ErrorToast("Something Went Wrong")
@@ -221,18 +221,17 @@ export function ProfileUpdateRequest(email, firstName, lastName, mobile, passwor
     }).catch((err) => {
         ErrorToast("Something Went Wrong")
         store.dispatch(HideLoader())
+        UnAuthorizeRequest(err);
         return false;
     });
 }
 
-// Recover Password Step 01 Send OTP
 export function RecoverVerifyEmailRequest(email) {
     store.dispatch(ShowLoader())
     let URL = BaseURL + "/RecoverVerifyEmail/" + email;
     return axios.get(URL).then((res) => {
         store.dispatch(HideLoader())
         if (res.status === 200) {
-
             if (res.data['status'] === "fail") {
                 ErrorToast("No user found");
                 return false;
@@ -248,11 +247,11 @@ export function RecoverVerifyEmailRequest(email) {
     }).catch((err) => {
         ErrorToast("Something Went Wrong")
         store.dispatch(HideLoader())
+        UnAuthorizeRequest(err);
         return false;
     });
 }
 
-// Recover Password Step 02 Verify OTP
 export function RecoverVerifyOTPRequest(email, OTP) {
     store.dispatch(ShowLoader())
     let URL = BaseURL + "/RecoverVerifyOTP/" + email + "/" + OTP;
@@ -274,20 +273,18 @@ export function RecoverVerifyOTPRequest(email, OTP) {
     }).catch((err) => {
         ErrorToast("Something Went Wrong")
         store.dispatch(HideLoader())
+        UnAuthorizeRequest(err);
         return false;
     });
 }
 
-// Recover Password Step 03 Reset Pass
 export function RecoverResetPassRequest(email, OTP, password) {
     store.dispatch(ShowLoader())
     let URL = BaseURL + "/RecoverResetPass";
     let PostBody = {email: email, OTP: OTP, password: password}
-
     return axios.post(URL, PostBody).then((res) => {
         store.dispatch(HideLoader())
         if (res.status === 200) {
-
             if (res.data['status'] === "fail") {
                 ErrorToast(res.data['data']);
                 return false;
@@ -303,6 +300,7 @@ export function RecoverResetPassRequest(email, OTP, password) {
     }).catch((err) => {
         ErrorToast("Something Went Wrong")
         store.dispatch(HideLoader())
+        UnAuthorizeRequest(err);
         return false;
     });
 }

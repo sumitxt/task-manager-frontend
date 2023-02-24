@@ -5,7 +5,7 @@ export function UpdateToDO(id, status) {
     return Swal.fire({
         title: 'Change Status',
         input: 'select',
-        inputOptions: {New: 'New', Completed: 'Completed',"In Progress": 'In progress', Canceled: 'Canceled'},
+        inputOptions: {New: 'New', Completed: 'Completed', "In Progress": 'In progress', Canceled: 'Canceled'},
         inputValue: status,
     }).then((result) => {
         return UpdateStatusRequest(id, result.value).then((res) => {

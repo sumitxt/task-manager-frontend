@@ -77,7 +77,7 @@ const Registration = () => {
                                 <div lassName="row mt-2 p-0">
                                     <div className="col-md-4 p-2">
                                         <button onClick={onRegistration}
-                                                className="btn mt-3 w-100 float-end btn-primary animated fadeInUp">Complete
+                                                className="btn mt-3 w-100 float-end button-63 animated fadeInUp">Sign up
                                         </button>
                                     </div>
                                 </div>

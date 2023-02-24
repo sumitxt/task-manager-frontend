@@ -41,7 +41,7 @@ const Login = () => {
                                        className="form-control animated fadeInUp" type="password"/>
                                 <br/>
                                 <button onClick={SubmitLogin}
-                                        className="btn w-100 animated fadeInUp float-end btn-primary">Next
+                                        className="btn w-100 animated fadeInUp float-end button-63">Login
                                 </button>
                                 <hr/>
                                 <div className="float-end mt-3">
@@ -49,7 +49,7 @@ const Login = () => {
                                     <span>
                                         <Link className="text-center ms-3 h6 animated fadeInUp" to="/Registration">Sign Up </Link>
                                         <span className="ms-1">|</span>
-                                        <Link className="text-center ms-3 h6 animated fadeInUp" to="/SendOTP">Forget Password</Link>
+                                        <Link className="text-center ms-3 h6 animated fadeInUp" to="/SendOTP">Forgot Password?</Link>
                                     </span>
 
                                 </div>

@@ -47,7 +47,7 @@ const New = () => {
                                 <input className="form-control w-100"/>
                             </div>
                             <div className="col-4">
-                                <button className="btn btn-primary w-100">Search</button>
+                                <button className="btn button-63 w-100">Search</button>
                             </div>
                         </div>
                     </div>
