@@ -10,25 +10,27 @@ import {UpdateToDO} from "../../helper/UpdateAlert";
 const Progress = () => {
 
 
-    useEffect(() => {
-        TaskListByStatus("In Progress")
-    }, [])
+    useEffect(()=>{
+        TaskListByStatus("Progress")
+    },[])
 
     const ProgressList = useSelector((state) => state.task.Progress)
 
 
-    const DeleteItem = (id) => {
-        DeleteToDO(id).then((result) => {
-            if (result === true) {
-                TaskListByStatus("In Progress");
+
+
+    const DeleteItem=(id)=>{
+        DeleteToDO(id).then((result)=>{
+            if(result===true){
+                TaskListByStatus("Progress");
             }
         })
     }
 
-    const StatusChangeItem = (id, status) => {
-        UpdateToDO(id, status).then((result) => {
-            if (result === true) {
-                TaskListByStatus("In Progress");
+    const StatusChangeItem=(id,status)=>{
+        UpdateToDO(id, status).then((result)=>{
+            if(result===true){
+                TaskListByStatus("Progress");
             }
         })
     }
@@ -46,14 +48,14 @@ const Progress = () => {
                                 <input className="form-control w-100"/>
                             </div>
                             <div className="col-4">
-                                <button className="btn button-63 w-100">Search</button>
+                                <button className="btn btn-primary w-100">Search</button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="row p-0 m-0">
                     {
-                        ProgressList.map((item, i) =>
+                        ProgressList.map((item,i)=>
                             <div key={i.toString()} className="col-12 col-lg-4 col-sm-6 col-md-4  p-2">
                                 <div className="card h-100">
                                     <div className="card-body">
@@ -61,10 +63,8 @@ const Progress = () => {
                                         <p className="animated zoomInDown">{item.description}</p>
                                         <p className="m-0 animated zoomInDown p-0">
                                             <AiOutlineCalendar/> {item.createdDate}
-                                            <a onClick={StatusChangeItem.bind(this, item._id, item.status)}
-                                               className="icon-nav text-primary mx-1"><AiOutlineEdit/></a>
-                                            <a onClick={DeleteItem.bind(this, item._id)}
-                                               className="icon-nav text-danger mx-1"><AiOutlineDelete/></a>
+                                            <a onClick={StatusChangeItem.bind(this,item._id,item.status)}  className="icon-nav text-primary mx-1"><AiOutlineEdit /></a>
+                                            <a onClick={DeleteItem.bind(this,item._id)} className="icon-nav text-danger mx-1"><AiOutlineDelete /></a>
                                             <a className="badge float-end bg-primary">{item.status}</a>
                                         </p>
                                     </div>
