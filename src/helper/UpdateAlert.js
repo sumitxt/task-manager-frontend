@@ -8,9 +8,8 @@ export function UpdateToDO(id,status){
         inputOptions: {New: 'New', Completed: 'Completed', Progress: 'Progress', Canceled: 'Canceled'},
         inputValue:status,
     }).then((result)=>{
-        console.log(result)
         if(result.isDismissed){
-            return
+            return;
         }
         else{
         return UpdateStatusRequest(id, result.value).then((res)=>{
